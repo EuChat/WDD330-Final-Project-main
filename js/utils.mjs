@@ -40,7 +40,6 @@ export function LoadHeaderFooter() {
   let footer = document.querySelector("#mainFooter");
   LoadData(templateFoot, footer);
 
-  LoadSuper();
 };
 
 async function LoadData(path, target) {
@@ -48,10 +47,4 @@ async function LoadData(path, target) {
   let html = await data.text();
   target.innerHTML = html
 };
-function LoadSuper() {
-  let num = document.querySelector("header");
-  let num2 = num.querySelector("div");
 
-  window.console.log(num);
-  window.console.log(num2);
-};

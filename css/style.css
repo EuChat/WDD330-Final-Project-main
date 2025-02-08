@@ -29,10 +29,24 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 0 10px;
+  justify-items: left;
+}
+
+#menu {
+  display: block;
+}
+
+.navigation ul {
+  list-style: none;
 }
 
 .logo {
