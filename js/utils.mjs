@@ -31,12 +31,12 @@ export function getParam(param) {
 
 
 export function LoadHeaderFooter() {
-  const templateHead = "/public/partials/header.html";
+  const templateHead = "/partials/header.html";
   let header = document.querySelector("#mainHeader");
   LoadData(templateHead, header);
 
 
-  const templateFoot = "/public/partials/footer.html";
+  const templateFoot = "/partials/footer.html";
   let footer = document.querySelector("#mainFooter");
   LoadData(templateFoot, footer);
 
