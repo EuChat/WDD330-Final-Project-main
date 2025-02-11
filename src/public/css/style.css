@@ -87,6 +87,7 @@ header {
 }
 
 .hero {
+  background-color: var(--dark-grey);
   background-image: url(/images/nordwood-themes-Tmz8FThN_BE-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
