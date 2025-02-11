@@ -46,7 +46,6 @@ header {
   order: 1;
 }
 
-
 .navigation {
   display: grid;
   grid-template-rows: 0fr;
@@ -64,7 +63,6 @@ header {
   list-style: none;
   overflow: hidden;
   transition: display 1s;
-
 }
 
 .logo {
@@ -94,7 +92,6 @@ header {
   background-repeat: no-repeat;
   padding: 10%;
 }
-
 
 /* utility classes */
 .highlight {
@@ -247,7 +244,6 @@ button:active {
   grid-row: 2;
   grid-column: 3;
 }
-
 
 footer {
   font-size: var(--small-font);
