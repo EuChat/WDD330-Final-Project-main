@@ -31,20 +31,51 @@ export function getParam(param) {
 
 
 export function LoadHeaderFooter() {
-  const templateHead = "/partials/header.html";
+  // load header
   let header = document.querySelector("#mainHeader");
-  LoadData(templateHead, header);
+  header.innerHTML = templateHeader;
 
-
-  const templateFoot = "/partials/footer.html";
+  // load footer 
   let footer = document.querySelector("#mainFooter");
-  LoadData(templateFoot, footer);
+  footer.innerHTML = templateFooter;
 
+  // manage hamburger button 
+  LoadHam();
 };
 
-async function LoadData(path, target) {
-  let data = await fetch(path);
-  let html = await data.text();
-  target.innerHTML = html
+let hamCount = 0;
+
+function LoadHam() {
+  const nav = document.querySelector(".navigation");
+  const ham = document.querySelector("#menu");
+  ham.addEventListener("click", () => {
+    window.scrollX += 10;
+    nav.classList.toggle("show");
+
+    if (hamCount == 0) {
+      ham.innerHTML = `&times`;
+      hamCount = 1;
+    }
+    else {
+      ham.innerHTML = `&#9776`;
+      hamCount = 0;
+    }
+  });
 };
 
+const templateHeader = `<div class="logo">
+  <img src="/images/alexander-mils-nG4ZimMIO_k-unsplash.jpg" alt="tent image for logo" />
+  <a href="/index.html">Food<span class="highlight">Tracker</span></a>
+</div>
+  <button type="button" id="menu">&#9776</button>
+<div class="navigation">
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/grocery.html">My Groceries</a></li>
+    <li><a href="/meal-planner.html">Meal planner</a></li>
+    <li><a href="/recepies-listing.html">Discover</a></li>
+    <li><a href="/search.html">Search Recepies</a></li>
+  </ul>
+</div>
+`;
+const templateFooter = `&copy;NOT a real business`;

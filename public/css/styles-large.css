@@ -1,0 +1,39 @@
+@media (min-width: 600px) {
+
+    body {
+        max-width: 1080px;
+        margin: auto;
+    }
+
+    .mission {
+        font-size: 1.2em;
+    }
+
+    .cart-card {
+        font-size: inherit;
+        grid-template-columns: 150px auto 15%;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .navigation {
+        grid-template-rows: 1fr;
+        transition: grid-template-rows 0.5s;
+    }
+
+    .navigation ul {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5%;
+        transition: display 1s;
+    }
+
+}
