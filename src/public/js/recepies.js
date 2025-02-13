@@ -47,6 +47,7 @@ function DisplayCards(information) {
     let name = document.createElement("h2");
     let ingredientsHead = document.createElement("h3");
     let ingredients = document.createElement("ul");
+    let direct = document.createElement("a");
 
     // attribute phase
     card.setAttribute("class", "product-card");
@@ -54,18 +55,19 @@ function DisplayCards(information) {
       let item = document.createElement("li");
       item.textContent = ingredient
       ingredients.appendChild(item)
-
     })
+    direct.setAttribute("href", "/directories/recipe-details.html")
 
     // text phase
     name.textContent = recipie.Name;
     ingredientsHead.textContent = "Ingredients";
 
     // addition phase
-    card.appendChild(name);
-    card.appendChild(ingredientsHead);
-    card.appendChild(ingredients);
+    direct.appendChild(name);
+    direct.appendChild(ingredientsHead);
+    direct.appendChild(ingredients);
 
+    card.appendChild(direct);
     container.appendChild(card);
   });
 };

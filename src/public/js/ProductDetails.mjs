@@ -2,8 +2,6 @@ import { setLocalStorage, getLocalStorage } from "./utils.mjs";
 
 function productDetailsTemplate(product) {
   let output = "";
-  let determiner = getLocalStorage("category");
-  if (determiner == "tents") {//in this case it is the category of tents
     output = `<section class="product-detail"> <h3>${product.Brand.Name}</h3>
     <h2 class="divider">${product.NameWithoutBrand}</h2>
     <img
@@ -19,25 +17,6 @@ function productDetailsTemplate(product) {
     <div class="product-detail__add">
       <button id="addToCart" data-id="${product.Id}">Add to Cart</button>
     </div></section>`;
-
-  } else {//in thi scase it i snot the category of tents
-    output = `<section class="product-detail"> <h3>${product.Name}</h3>
-    <h2 class="divider">${product.NameWithoutBrand}</h2>
-    <img
-      class="divider"
-      src="${product.Images.PrimaryMedium}"
-      alt="${product.NameWithoutBrand}"
-    />
-    <p class="product-card__price">$${product.FinalPrice}</p>
-    <p class="product__color">${product.Colors[0].ColorName}</p>
-    <p class="product__description">
-    ${product.DescriptionHtmlSimple}
-    </p>
-    <div class="product-detail__add">
-      <button id="addToCart" data-id="${product.Id}">Add to Cart</button>
-    </div></section>`;
-
-  }
 
 
   return output;

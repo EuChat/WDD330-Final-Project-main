@@ -9,18 +9,12 @@ function convertToJson(res) {
 export default class ProductData {
   constructor(category) {
     this.category = category;
-    this.path = `../json/${this.category}.json`;
+    this.path = `./json/recipes-temporary.json`;
   }
   async getData() {
     let result = await fetch(this.path)
       .then(convertToJson)
       .then((data) => data);
-    if (this.category == "tents") {
-      result;
-    }
-    else {
-      result = await result.Result
-    }
     return result;
   }
   async findProductById(id) {

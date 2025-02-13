@@ -21,7 +21,8 @@
       "Carbohydrates": "36g",
       "Fat": "10g"
     },
-    "Serving Suggestions": "Serve hot with a side of garlic bread or salad."
+    "Serving Suggestions": "Serve hot with a side of garlic bread or salad.",
+    "Servings": 4
   },
   {
     "Name": "Cheesecake",
@@ -42,7 +43,8 @@
       "Carbohydrates": "28g",
       "Fat": "22g"
     },
-    "Serving Suggestions": "Top with fresh berries or chocolate sauce."
+    "Serving Suggestions": "Top with fresh berries or chocolate sauce.",
+    "Servings": 8
   },
   {
     "Name": "Hamburger",
@@ -65,7 +67,8 @@
       "Carbohydrates": "30g",
       "Fat": "18g"
     },
-    "Serving Suggestions": "Pair with fries and a soft drink."
+    "Serving Suggestions": "Pair with fries and a soft drink.",
+    "Servings": 1
   },
   {
     "Name": "Lasagna",
@@ -88,7 +91,8 @@
       "Carbohydrates": "40g",
       "Fat": "15g"
     },
-    "Serving Suggestions": "Serve with a side of garlic bread and a green salad."
+    "Serving Suggestions": "Serve with a side of garlic bread and a green salad.",
+    "Servings": 6
   },
   {
     "Name": "Salad",
@@ -111,7 +115,8 @@
       "Carbohydrates": "15g",
       "Fat": "5g"
     },
-    "Serving Suggestions": "Enjoy as a side dish or add grilled chicken for a full meal."
+    "Serving Suggestions": "Enjoy as a side dish or add grilled chicken for a full meal.",
+    "Servings": 2
   },
   {
     "Name": "Sadza and Derere",
@@ -130,6 +135,97 @@
       "Carbohydrates": "45g",
       "Fat": "1g"
     },
-    "Serving Suggestions": "Best served with beef stew or fried fish."
+    "Serving Suggestions": "Best served with beef stew or fried fish.",
+    "Servings": 4
+  },
+  {
+    "Name": "Sushi",
+    "Ingredients": [
+      "Sushi rice",
+      "Seaweed sheets",
+      "Raw fish or cooked seafood",
+      "Avocado",
+      "Cucumber",
+      "Soy sauce",
+      "Wasabi"
+    ],
+    "Method": "Rolling & Slicing",
+    "Flavour": "Umami & Fresh",
+    "Origin": "Japan",
+    "Nutrition": {
+      "Calories": 200,
+      "Protein": "12g",
+      "Carbohydrates": "35g",
+      "Fat": "3g"
+    },
+    "Serving Suggestions": "Serve with pickled ginger and soy sauce.",
+    "Servings": 2
+  },
+  {
+    "Name": "Chicken Curry",
+    "Ingredients": [
+      "Chicken",
+      "Onions",
+      "Garlic",
+      "Ginger",
+      "Tomatoes",
+      "Spices (turmeric, cumin, coriander)"
+    ],
+    "Method": "Simmering",
+    "Flavour": "Spicy & Rich",
+    "Origin": "India",
+    "Nutrition": {
+      "Calories": 300,
+      "Protein": "25g",
+      "Carbohydrates": "20g",
+      "Fat": "12g"
+    },
+    "Serving Suggestions": "Serve with steamed rice or naan bread.",
+    "Servings": 4
+  },
+  {
+    "Name": "Pancakes",
+    "Ingredients": [
+      "Flour",
+      "Eggs",
+      "Milk",
+      "Sugar",
+      "Baking powder",
+      "Butter"
+    ],
+    "Method": "Frying",
+    "Flavour": "Sweet",
+    "Origin": "Global",
+    "Nutrition": {
+      "Calories": 227,
+      "Protein": "6g",
+      "Carbohydrates": "28g",
+      "Fat": "10g"
+    },
+    "Serving Suggestions": "Serve with syrup and fresh fruit.",
+    "Servings": 4
+  },
+  {
+    "Name": "Stir-Fry Vegetables",
+    "Ingredients": [
+      "Broccoli",
+      "Carrots",
+      "Bell peppers",
+      "Soy sauce",
+      "Garlic",
+      "Ginger",
+      "Oil"
+    ],
+    "Method": "Stir-frying",
+    "Flavour": "Savory & Crunchy",
+    "Origin": "Asia",
+    "Nutrition": {
+      "Calories": 150,
+      "Protein": "5g",
+      "Carbohydrates": "18g",
+      "Fat": "7g"
+    },
+    "Serving Suggestions": "Pair with rice or noodles.",
+    "Servings": 2
   }
 ]
