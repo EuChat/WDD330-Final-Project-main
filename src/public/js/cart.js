@@ -11,6 +11,7 @@ function cartItemTemplate(item) {
   newItem = `<li class="cart-card divider">
     <a href="#">
       <h2 class="card__name">${item.Name}</h2>
+      <img src="${item.Image}" alt="${item.Name}" loading="lazy" >
     </a>
     <button class="closer" value="${item.Name}">&times;</button>
     </div>

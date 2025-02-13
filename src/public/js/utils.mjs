@@ -64,7 +64,7 @@ function LoadHam() {
 };
 
 const templateHeader = `<div class="logo">
-  <img src="/images/alexander-mils-nG4ZimMIO_k-unsplash.jpg" alt="tent image for logo" />
+  <img src="/images/alexander-mils-nG4ZimMIO_k-unsplash.WebP" alt="tent image for logo" loading="lazy" width="100" height="100"/>
   <a href="/index.html">Food<span class="highlight">Tracker</span></a>
 </div>
   <button type="button" id="menu">&#9776</button>

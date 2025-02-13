@@ -15,6 +15,7 @@
     "Method": "Baking",
     "Flavour": "Savoury",
     "Origin": "Italy",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 285,
       "Protein": "12g",
@@ -37,6 +38,7 @@
     "Method": "Baking",
     "Flavour": "Sweet",
     "Origin": "Greece",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 321,
       "Protein": "5g",
@@ -61,6 +63,7 @@
     "Method": "Grilling or Frying",
     "Flavour": "Savoury",
     "Origin": "Germany",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 354,
       "Protein": "17g",
@@ -85,6 +88,7 @@
     "Method": "Baking",
     "Flavour": "Savoury",
     "Origin": "Italy",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 350,
       "Protein": "20g",
@@ -109,6 +113,7 @@
     "Method": "Raw Preparation",
     "Flavour": "Fresh & Crunchy",
     "Origin": "Global",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 120,
       "Protein": "3g",
@@ -129,6 +134,7 @@
     "Method": "Boiling & Stirring",
     "Flavour": "Mild & Earthy",
     "Origin": "Zimbabwe",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 200,
       "Protein": "6g",
@@ -152,6 +158,7 @@
     "Method": "Rolling & Slicing",
     "Flavour": "Umami & Fresh",
     "Origin": "Japan",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 200,
       "Protein": "12g",
@@ -174,6 +181,7 @@
     "Method": "Simmering",
     "Flavour": "Spicy & Rich",
     "Origin": "India",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 300,
       "Protein": "25g",
@@ -196,6 +204,7 @@
     "Method": "Frying",
     "Flavour": "Sweet",
     "Origin": "Global",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 227,
       "Protein": "6g",
@@ -219,6 +228,7 @@
     "Method": "Stir-frying",
     "Flavour": "Savory & Crunchy",
     "Origin": "Asia",
+    "Image": "/images/Foods/shourav-sheikh-a66sGfOnnqQ-unsplash.WebP",
     "Nutrition": {
       "Calories": 150,
       "Protein": "5g",
