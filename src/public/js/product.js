@@ -1,8 +1,8 @@
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
-import { setLocalStorage, getParam, getLocalStorage } from "./utils.mjs";
+import { setLocalStorage, getParam } from "./utils.mjs";
 
-const dataSource = new ProductData(getLocalStorage("category"));
+const dataSource = new ProductData();
 
 const productId = getParam("product");
 

@@ -56,7 +56,7 @@ function DisplayCards(information) {
       item.textContent = ingredient
       ingredients.appendChild(item)
     })
-    direct.setAttribute("href", "/directories/recipe-details.html")
+    direct.setAttribute("href", "/directories/recipe-details.html?product=")
 
     // text phase
     name.textContent = recipie.Name;

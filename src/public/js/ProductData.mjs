@@ -7,9 +7,8 @@ function convertToJson(res) {
 }
 
 export default class ProductData {
-  constructor(category) {
-    this.category = category;
-    this.path = `./json/recipes-temporary.json`;
+  constructor() {
+    this.path = `/json/recipes-temporary.json`;
   }
   async getData() {
     let result = await fetch(this.path)
