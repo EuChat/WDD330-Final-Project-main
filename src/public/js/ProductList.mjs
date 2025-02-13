@@ -1,7 +1,7 @@
 function productCardTemplate(product) {
   let card = ""
   card = `<li class="product-card">
-      <a href="/product_pages/index.html?product=${product.Name}">
+      <a href="/directories/recipe-details.html?product=${product.Name}">
         <h2 class="card__name">${product.Name}</h2>
       </a>
     </li>`
