@@ -73,7 +73,7 @@ const templateHeader = `<div class="logo">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/directories/grocery.html">My Groceries</a></li>
     <li><a href="/directories/meal-planner.html">Meal planner</a></li>
-    <li><a href="/directories/recepies-listing.html">Discover</a></li>
+    <li><a href="/directories/recepies-listing.html">Recipes Listing</a></li>
     <li><a href="/directories/search.html">Search Recepies</a></li>
   </ul>
 </div>
