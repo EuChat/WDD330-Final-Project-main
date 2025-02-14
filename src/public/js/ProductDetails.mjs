@@ -2,16 +2,37 @@ import { setLocalStorage } from "./utils.mjs";
 
 function productDetailsTemplate(product) {
   let output = "";
+  // ingredients
   let ingredients = document.createElement("ul");
   product.Ingredients.forEach(ingredient => {
     let item = document.createElement("li");
     item.textContent = ingredient;
     ingredients.appendChild(item);
   })
+
+  // nutrition
+  let nutrition = document.createElement("ul");
+
+  for (let [key, value] of Object.entries(product.Nutrition)) {
+    let item = document.createElement("li");
+    item.textContent = `${key}: ${value}`;
+    nutrition.appendChild(item);
+  }
+
+
   output = `<section class="product-detail"> <h2>${product.Name}</h2>
     <img src="${product.Image}" alt="${product.Name}" loading="lazy" >
     <h3 class="divider">Ingredients</h3>
     ${ingredients.innerHTML}
+
+    <h3 class="divider">Nutrition</h3>
+    ${nutrition.innerHTML}
+
+    <aside>
+    <p>Sugestion: <br>${product["Serving Suggestions"]}</p>
+    <p>Number of servings: <br>${product.Servings}</p>
+    </aside>
+
     <div class="product-detail__add">
       <button id="addToCart" data-id="${product.Name}">Add to Cart</button>
     </div></section>`;

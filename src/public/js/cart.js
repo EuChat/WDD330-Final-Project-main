@@ -9,10 +9,15 @@ function renderCartContents() {
 function cartItemTemplate(item) {
   let newItem = "";
   newItem = `<li class="cart-card divider">
-    <a href="#">
-      <h2 class="card__name">${item.Name}</h2>
+    <div>
       <img src="${item.Image}" alt="${item.Name}" loading="lazy" >
-    </a>
+    </div>
+
+    <div>
+      <h2 class="card__name">${item.Name}</h2>
+      <p>${item["Serving Suggestions"]}</p>
+    </div>
+
     <button class="closer" value="${item.Name}">&times;</button>
     </div>
   </li>`;

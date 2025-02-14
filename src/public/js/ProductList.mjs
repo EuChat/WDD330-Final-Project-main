@@ -3,7 +3,7 @@ function productCardTemplate(product) {
   card = `<li class="product-card">
       <a href="/directories/recipe-details.html?product=${product.Name}">
         <h2 class="card__name">${product.Name}</h2>
-        <img src="${product.Image}" alt="${product.Name}" loading="lazy" >
+        <img src="${product.Image}" alt="${product.Name}" loading="lazy" height="200">
       </a>
     </li>`
 
