@@ -1,4 +1,4 @@
-window.console.log(import.meta);
+window.console.log(import.meta.env);
 let baseURL;
 
 try {
