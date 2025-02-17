@@ -10,15 +10,15 @@ function cartItemTemplate(item) {
   let newItem = "";
   newItem = `<li class="cart-card divider">
     <div class="cart-card__image">
-      <img src="${item.Image}" alt="${item.Name}" loading="lazy" >
+      <img src="${item.image}" alt="${item.title}" loading="lazy" >
     </div>
 
     <div>
-      <h2 class="card__name">${item.Name}</h2>
+      <h2 class="card__name">${item.title}</h2>
       <p>${item["Serving Suggestions"]}</p>
     </div>
 
-    <button class="closer" value="${item.Name}">&times;</button>
+    <button class="closer" value="${item.title}">&times;</button>
     </div>
   </li>`;
 
