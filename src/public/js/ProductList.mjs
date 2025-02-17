@@ -29,6 +29,7 @@ function productCardTemplate(product) {
   return card;
 }
 
+GetRecipes();
 export default class ProductListing {
   constructor(dataSource, listElement) {
     // We passed in this information to make our class as reusable as possible.
@@ -48,7 +49,6 @@ export default class ProductListing {
     try {
       let theList = list.map((item) => productCardTemplate(item));
       document.querySelector(".product-list").innerHTML = theList.join("");
-      GetRecipes();
     } catch (error) {
       window.console.log(error);
 

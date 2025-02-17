@@ -1,5 +1,11 @@
 window.console.log(import.meta);
-const baseURL = import.meta.env.VITE_SERVER_URL;
+let baseURL;
+
+try {
+  baseURL = import.meta.env.VITE_SERVER_URL
+} catch (error) {
+  baseURL = `/json/recipes-temporary.json`
+}
 
 function convertToJson(res) {
   if (res.ok) {
