@@ -1,3 +1,4 @@
+import { DisplayModal } from "./utils.mjs";
 
 // Create the calendar dynamically
 function createCalendar() {
@@ -68,7 +69,11 @@ function createCalendar() {
         // Add days of the month
         for (let i = 1; i <= lastDate; i++) {
             const dayDiv = document.createElement("div");
-            dayDiv.textContent = i;
+            const numberDay = document.createElement("p");
+
+            dayDiv.setAttribute("class", "day")
+            dayDiv.info = `Hie, how are you?`;
+            numberDay.textContent = i;
 
             // Highlight today's date
             if (
@@ -76,9 +81,10 @@ function createCalendar() {
                 month === new Date().getMonth() &&
                 year === new Date().getFullYear()
             ) {
-                dayDiv.className = "today";
+                dayDiv.classList.add("today");
             }
 
+            dayDiv.appendChild(numberDay);
             days.appendChild(dayDiv);
         }
     }
@@ -98,5 +104,28 @@ function createCalendar() {
     renderCalendar(currentDate);
 }
 
+function DisplayMealDetails() {
+    let days = document.querySelectorAll(".day")
+    days.forEach(day => { day.addEventListener("click", () => { DisplayModal(TemplateEvent(day)) }) })
+}
+
 // Call the function to build the calendar
 createCalendar();
+DisplayMealDetails();
+
+function TemplateEvent(day) {
+    let output = `<div class="ModalHead">
+                    <h4>Plan Meal<h4> 
+                    <button type="button" class="closer">&times</button>
+                </div>
+                <div class="ModalContent">
+                    <div class="ModalButtons">
+                        <button class="addMeal">Add meal</button>
+                        <button class="removeMeal>Remove meal</button>
+                    </div>
+                    <div class="ModalDisplay">
+                        ${day.info}
+                    </div>
+                </div>`;
+    return output;
+}

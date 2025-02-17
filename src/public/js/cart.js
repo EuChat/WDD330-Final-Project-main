@@ -9,7 +9,7 @@ function renderCartContents() {
 function cartItemTemplate(item) {
   let newItem = "";
   newItem = `<li class="cart-card divider">
-    <div>
+    <div class="cart-card__image">
       <img src="${item.Image}" alt="${item.Name}" loading="lazy" >
     </div>
 

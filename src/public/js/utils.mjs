@@ -41,9 +41,10 @@ export function LoadHeaderFooter() {
 
   // manage hamburger button 
   LoadHam();
+  // manage modal 
+  HandleModal();
 };
 
-let hamCount = 0;
 
 function LoadHam() {
   const nav = document.querySelector(".navigation");
@@ -63,6 +64,44 @@ function LoadHam() {
   });
 };
 
+
+export function HandleModal() {
+  let overlay = document.querySelector("#overlay");
+  overlay.addEventListener("click", () => {
+    CloseModal();
+  })
+}
+
+export function CloseModal() {
+  let modal = document.querySelector("#modal");
+  let overlay = document.querySelector("#overlay");
+  overlay.classList.remove("show");
+  modal.classList.remove("show");
+}
+
+export function OpenModal() {
+  let modal = document.querySelector("#modal");
+  let overlay = document.querySelector("#overlay");
+  overlay.classList.add("show");
+  modal.classList.add("show");
+
+  // closing technique 
+  let closer = modal.querySelector(".closer");
+  closer.addEventListener("click", () => { CloseModal() })
+}
+
+
+
+export function DisplayModal(innerHTML) {
+  let modal = document.querySelector("#modal");
+  modal.innerHTML = innerHTML;
+  OpenModal();
+}
+
+
+// variables 
+let hamCount = 0;
+
 const templateHeader = `<div class="logo">
   <img src="/images/alexander-mils-nG4ZimMIO_k-unsplash.WebP" alt="tent image for logo" loading="lazy" width="100" height="100"/>
   <a href="/index.html">Food<span class="highlight">Tracker</span></a>
@@ -76,6 +115,9 @@ const templateHeader = `<div class="logo">
     <li><a href="/directories/recepies-listing.html">Recipes Listing</a></li>
     <li><a href="/directories/search.html">Search Recepies</a></li>
   </ul>
-</div>
+  <div id="overlay" ></div>
+    <div id="modal" ></div>
+  </div>
 `;
+
 const templateFooter = `&copy;NOT a real business`;
