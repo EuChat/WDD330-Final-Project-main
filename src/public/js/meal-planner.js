@@ -119,7 +119,7 @@ function DisplayMealDetails() {
   let days = document.querySelectorAll(".day");
   days.forEach((day) => {
     day.addEventListener("click", () => {
-      DisplayModal(TemplateEvent(day));
+      DisplayModal(TemplateEvent());
     });
   });
 }
@@ -128,7 +128,7 @@ function DisplayMealDetails() {
 createCalendar();
 DisplayMealDetails();
 
-function TemplateEvent(day) {
+function TemplateEvent() {
   let output = `<div class="ModalHead">
                     <h4>Plan Meal<h4> 
                     <button type="button" class="closer">&times</button>
