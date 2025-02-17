@@ -42,7 +42,6 @@ closers.forEach((element) => {
   });
 });
 
-
 // total for the item
 function findTotal() {
   let number = 0;

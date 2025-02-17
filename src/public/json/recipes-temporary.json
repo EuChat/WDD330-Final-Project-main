@@ -125,12 +125,7 @@
   },
   {
     "Name": "Sadza and Derere",
-    "Ingredients": [
-      "Maize meal",
-      "Water",
-      "Okra",
-      "Salt"
-    ],
+    "Ingredients": ["Maize meal", "Water", "Okra", "Salt"],
     "Method": "Boiling & Stirring",
     "Flavour": "Mild & Earthy",
     "Origin": "Zimbabwe",
