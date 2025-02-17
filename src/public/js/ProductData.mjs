@@ -1,11 +1,4 @@
-window.console.log(import.meta.env);
-let baseURL;
-
-try {
-  baseURL = import.meta.env.VITE_SERVER_URL
-} catch (error) {
-  baseURL = `/json/recipes-temporary.json`
-}
+import { GetRecipes, getLocalStorage, setLocalStorage, availableList } from "./utils.mjs";
 
 function convertToJson(res) {
   if (res.ok) {
@@ -17,20 +10,14 @@ function convertToJson(res) {
 
 export default class ProductData {
   constructor() {
-    // this.path = `/json/recipes-temporary.json`;
+
   }
-  // async getData() {
-  //   let result = await fetch(this.path)
-  //     .then(convertToJson)
-  //     .then((data) => data);
-  //   return result;
-  // }
   async getData() {
-    let result = await fetch(baseURL)
-      .then(convertToJson)
-      .then((data) => data);
-    return result;
+    let theOutput = getLocalStorage(availableList) || await GetRecipes();
+    setLocalStorage(availableList, theOutput)
+    return theOutput;
   }
+
   async findProductById(id) {
     let products = await this.getData();
     let result = products.find((item) => item.Id == id);
@@ -39,7 +26,7 @@ export default class ProductData {
   async findProductByName(name) {
     const products = await this.getData();
     let theName = await name;
-    let result = await products.find((item) => item.Name == theName);
+    let result = await products.find((item) => item.title == theName);
     return result;
   }
 }

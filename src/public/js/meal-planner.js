@@ -82,6 +82,7 @@ function createCalendar() {
       const numberDay = document.createElement("p");
 
       dayDiv.setAttribute("class", "day");
+
       dayDiv.info = `Hie, how are you?`;
       numberDay.textContent = i;
 
@@ -134,12 +135,19 @@ function TemplateEvent(day) {
                 </div>
                 <div class="ModalContent">
                     <div class="ModalButtons">
-                        <button class="addMeal">Add meal</button>
-                        <button class="removeMeal>Remove meal</button>
+                        <button type="button" class="addMeal">Add meal</button>
+                        <button type="button" class="removeMeal>Remove meal</button>
                     </div>
                     <div class="ModalDisplay">
-                        ${day.info}
+                        hie there
+                        ${RenderProducts().innerHTML}
                     </div>
                 </div>`;
+  return output;
+}
+
+function RenderProducts() {
+  let output = document.createElement("div");
+  output.innerHTML = "I am a message. hie whats going on over here??"
   return output;
 }

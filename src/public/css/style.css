@@ -327,6 +327,7 @@ footer {
   border: var(--border);
   border-radius: 5px;
   background-color: #fff;
+  color: black;
   transform: translate(-50%, -50%) scaleX(0);
   transition: transform 0.5s ease-in-out;
 }
@@ -360,6 +361,8 @@ footer {
   height: 10rem;
 }
 
+.ModalFace {}
+
 .ModalButtons {
   display: flex;
   flex-direction: column;
@@ -374,8 +377,8 @@ footer {
 }
 
 .ModalDisplay {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  color: black;
+  grid-column: 2 / 3;
 }
 
 #overlay {

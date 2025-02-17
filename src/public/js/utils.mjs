@@ -90,7 +90,27 @@ export function OpenModal() {
   closer.addEventListener("click", () => { CloseModal() })
 }
 
+export async function GetRecipes() {
+  // const url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=vegetarian%2Cdessert&number=8";
+  const url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=2";
+  const options = {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "b2c6bd28c4mshedaf2868b74e715p13117cjsn99ea633c26c6",
+      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+    }
+  };
 
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    window.console.log(result.recipes);
+    return result.recipes;
+    
+  } catch (error) {
+    window.console.error(error);
+  }
+}
 
 export function DisplayModal(innerHTML) {
   let modal = document.querySelector("#modal");
@@ -100,6 +120,9 @@ export function DisplayModal(innerHTML) {
 
 
 // variables 
+// name control
+export let availableList = "productList"
+
 let hamCount = 0;
 
 const templateHeader = `<div class="logo">

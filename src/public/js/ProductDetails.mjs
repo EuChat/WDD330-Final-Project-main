@@ -4,24 +4,23 @@ function productDetailsTemplate(product) {
   let output = "";
   // ingredients
   let ingredients = document.createElement("ul");
-  product.Ingredients.forEach(ingredient => {
+  product.extendedIngredients.forEach(ingredient => {
     let item = document.createElement("li");
-    item.textContent = ingredient;
+    item.textContent = ingredient.originalName;
     ingredients.appendChild(item);
   })
 
   // nutrition
   let nutrition = document.createElement("ul");
-
-  for (let [key, value] of Object.entries(product.Nutrition)) {
+  product.diets.forEach(diet => {
     let item = document.createElement("li");
-    item.textContent = `${key}: ${value}`;
+    item.textContent = diet;
     nutrition.appendChild(item);
-  }
+  })
 
 
-  output = `<section class="product-detail"> <h2>${product.Name}</h2>
-    <img src="${product.Image}" alt="${product.Name}" loading="lazy" >
+  output = `<section class="product-detail"> <h2>${product.title}</h2>
+    <img src="${product.image}" alt="${product.title}" loading="lazy" >
     <h3 class="divider">Ingredients</h3>
     ${ingredients.innerHTML}
 
@@ -30,11 +29,11 @@ function productDetailsTemplate(product) {
 
     <aside>
     <p>Sugestion: <br>${product["Serving Suggestions"]}</p>
-    <p>Number of servings: <br>${product.Servings}</p>
+    <p>Number of servings: <br>${product.servings}</p>
     </aside>
 
     <div class="product-detail__add">
-      <button id="addToCart" data-id="${product.Name}">Add to Cart</button>
+      <button id="addToCart" data-id="${product.id}">Add to Cart</button>
     </div></section>`;
 
 
@@ -70,12 +69,7 @@ export default class ProductDetails {
     // setLocalStorage("so-cart", this.product); // broken code!
     // Retrieve the existing cart from local storage
     let currentCart = JSON.parse(localStorage.getItem("so-cart")) || [];
-    try {
-      let itemIndex = currentCart.indexOf((this.product));
-      window.console.log(itemIndex)
-    } catch { window.console.log("") }
-    // Add the new product to the cart
-    this.product.quantity = 1;
+
     currentCart.push(this.product);
 
     setLocalStorage("so-cart", currentCart);
