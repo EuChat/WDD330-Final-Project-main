@@ -316,24 +316,24 @@ footer {
 /* modal css start  */
 
 #modal {
-  display: block;
+  display: grid;
   position: fixed;
   top: 50%;
   left: 50%;
   z-index: 10;
-  width: 75%;
-  height: 50%;
-  padding: 20px;
+  width: 80%;
+  height: 70%;
+  padding: 1rem;
   border: var(--border);
   border-radius: 5px;
   background-color: #fff;
   color: black;
+  grid-template-rows: 20% 80%;
   transform: translate(-50%, -50%) scaleX(0);
   transition: transform 0.5s ease-in-out;
 }
 
 #modal.show {
-  display: block;
   transform: translate(-50%, -50%) scaleX(1);
   transition: transform 0.5s ease-in-out;
 }
@@ -358,22 +358,23 @@ footer {
 .ModalContent {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  height: 10rem;
+  align-self: stretch;
 }
 
-.ModalFace {}
+
 
 .ModalButtons {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  padding: 20%;
 }
 
 .ModalButtons button {
-  width: 75%;
-  height: 4rem;
+  width: 90%;
+  height: 3rem;
   font-size: 1rem;
+  padding: 0;
 }
 
 .ModalDisplay {
@@ -382,7 +383,9 @@ footer {
 }
 
 #overlay {
-  position: absolute;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   left: 0;
   right: 0;
   top: 0;

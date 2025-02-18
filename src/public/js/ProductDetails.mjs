@@ -27,11 +27,6 @@ function productDetailsTemplate(product) {
     <h3 class="divider">Nutrition</h3>
     ${nutrition.innerHTML}
 
-    <aside>
-    <p>Sugestion: <br>${product["Serving Suggestions"]}</p>
-    <p>Number of servings: <br>${product.servings}</p>
-    </aside>
-
     <div class="product-detail__add">
       <button id="addToCart" data-id="${product.id}">Add to Cart</button>
     </div></section>`;

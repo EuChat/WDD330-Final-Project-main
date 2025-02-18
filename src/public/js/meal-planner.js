@@ -1,4 +1,5 @@
-import { DisplayModal } from "./utils.mjs";
+import { DisplayModal, getLocalStorage } from "./utils.mjs";
+
 
 // Create the calendar dynamically
 function createCalendar() {
@@ -83,7 +84,11 @@ function createCalendar() {
 
       dayDiv.setAttribute("class", "day");
 
-      dayDiv.info = `Hie, how are you?`;
+      // data of the day 
+      dayDiv.data = document.createElement("div");
+      dayDiv.data.innerHTML = `What's happening on ${i}?`;
+      dayDiv.meals = [];
+
       numberDay.textContent = i;
 
       // Highlight today's date
@@ -120,6 +125,7 @@ function DisplayMealDetails() {
   days.forEach((day) => {
     day.addEventListener("click", () => {
       DisplayModal(TemplateEvent());
+      EmpowerButtons(day);
     });
   });
 }
@@ -130,23 +136,105 @@ DisplayMealDetails();
 
 function TemplateEvent() {
   let output = `<div class="ModalHead">
-                    <h4>Plan Meal<h4> 
+                    <h3>Plan Meal<h3> 
                     <button type="button" class="closer">&times</button>
                 </div>
                 <div class="ModalContent">
                     <div class="ModalButtons">
-                        <button type="button" class="addMeal">Add meal</button>
-                        <button type="button" class="removeMeal">Remove meal</button>
+                        <button type="button" class="addMeal" >Add meal</button>
+                        <button type="button" class="removeMeal" >Remove meal</button>
+                        <button type="button" class="display" >Display current Recipe</button>
                     </div>
                     <div class="ModalDisplay">
-                        ${RenderProducts().innerHTML}
                     </div>
                 </div>`;
   return output;
 }
 
-function RenderProducts() {
-  let output = document.createElement("div");
-  output.innerHTML = "I am a message. hie whats going on over here??"
-  return output;
+function EmpowerButtons(day) {
+  // window.console.log(day.meals);
+  // showing the meals 
+  let adder = document.querySelector(".addMeal");
+  adder.addEventListener("click", () => {
+    renderCartContents(".ModalDisplay");
+    EmpowerAdder(day);
+  });
+
+  // removing meal 
+  let remover = document.querySelector(".removeMeal");
+  remover.addEventListener("click", () => {
+    let victim = document.querySelector(".ModalDisplay");
+    day.meals = [];
+    victim.innerHTML = day.meals;
+    day.classList.remove("set");
+  })
+
+  // showing current meal s
+  let shower = document.querySelector(".display");
+  shower.addEventListener("click", () => {
+    let victim = document.querySelector(".ModalDisplay");
+    victim.innerHTML = ``;
+    let myUl = document.createElement("ul");
+    // window.console.log(day.meals);
+    day.meals.forEach((meal) => {
+      myUl.innerHTML += cartItemTemplate(meal, false);
+    })
+    victim.appendChild(myUl);
+  });
+
+}
+
+
+function EmpowerAdder(day) {
+
+  // actually adding the meal
+  let scheduler = document.querySelectorAll(".selector");
+  scheduler.forEach((button) => {
+    button.addEventListener("click", () => {
+      day.classList.add("set")
+      let cartItems = getLocalStorage("so-cart") || [];
+      let result = cartItems.find((item) => item.id == button.value);
+      // window.console.log(result);
+      day.meals.push(result);
+      // window.console.log(day.meals);
+    })
+  });
+}
+
+
+// cart details added
+function renderCartContents(theLocation = ".product-list") {
+  let cartItems = getLocalStorage("so-cart") || [];
+  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+  document.querySelector(theLocation).innerHTML = htmlItems.join("");
+}
+
+function cartItemTemplate(item, AddingMode = true) {
+  let newItem = "";
+  if (AddingMode) {
+    newItem = `<li class="cart-card divider">
+    <div class="cart-card__image">
+      <img src="${item.image}" alt="${item.title}" loading="lazy" >
+    </div>
+
+    <div>
+      <h2 class="card__name">${item.title}</h2>
+    </div>
+
+    <button class="selector" value="${item.id}">&plus;</button>
+  </li>`;
+  } else {
+    newItem = `<li class="cart-card divider">
+    <div class="cart-card__image">
+      <img src="${item.image}" alt="${item.title}" loading="lazy" >
+    </div>
+
+    <div>
+      <h2 class="card__name">${item.title}</h2>
+    </div>
+
+  </li>`;
+  }
+
+  return newItem;
 }

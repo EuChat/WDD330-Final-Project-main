@@ -1,9 +1,9 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
-function renderCartContents() {
+function renderCartContents(theLocation = ".product-list") {
   let cartItems = getLocalStorage("so-cart") || [];
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  document.querySelector(theLocation).innerHTML = htmlItems.join("");
 }
 
 function cartItemTemplate(item) {
@@ -15,7 +15,6 @@ function cartItemTemplate(item) {
 
     <div>
       <h2 class="card__name">${item.title}</h2>
-      <p>${item["Serving Suggestions"]}</p>
     </div>
 
     <button class="closer" value="${item.title}">&times;</button>
