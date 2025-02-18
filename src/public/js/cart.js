@@ -35,8 +35,10 @@ let total = document.querySelector("#Total");
 closers.forEach((element) => {
   element.addEventListener("click", () => {
     let theList = JSON.parse(localStorage.getItem("so-cart")) || [];
-    let theItem = theList.findIndex((item) => item.Id == element.value);
+    let theItem = theList.findIndex((item) => item.title == element.value);
     theList.splice(theItem, 1);
+
+    // reload the page 
     setLocalStorage("so-cart", theList);
     window.location.reload();
   });

@@ -66,28 +66,42 @@ function LoadHam() {
 
 
 export function HandleModal() {
-  let overlay = document.querySelector("#overlay");
-  overlay.addEventListener("click", () => {
-    CloseModal();
-  })
+  try {
+    let overlay = document.querySelector("#overlay");
+    overlay.addEventListener("click", () => {
+      CloseModal();
+    })
+  } catch (error) {
+    window.console.log(error);
+  }
+
 }
 
 export function CloseModal() {
-  let modal = document.querySelector("#modal");
-  let overlay = document.querySelector("#overlay");
-  overlay.classList.remove("show");
-  modal.classList.remove("show");
+  try {
+    let modal = document.querySelector("#modal");
+    let overlay = document.querySelector("#overlay");
+    overlay.classList.remove("show");
+    modal.classList.remove("show");
+  } catch (error) {
+    window.console.log(error);
+  }
+
 }
 
 export function OpenModal() {
-  let modal = document.querySelector("#modal");
-  let overlay = document.querySelector("#overlay");
-  overlay.classList.add("show");
-  modal.classList.add("show");
+  try {
+    let modal = document.querySelector("#modal");
+    let overlay = document.querySelector("#overlay");
+    overlay.classList.add("show");
+    modal.classList.add("show");
 
-  // closing technique 
-  let closer = modal.querySelector(".closer");
-  closer.addEventListener("click", () => { CloseModal() })
+    // closing technique 
+    let closer = modal.querySelector(".closer");
+    closer.addEventListener("click", () => { CloseModal() })
+  } catch (error) {
+    window.console.log(error);
+  }
 }
 
 export async function GetRecipes() {
@@ -106,16 +120,21 @@ export async function GetRecipes() {
     const result = await response.json();
     window.console.log(result.recipes);
     return result.recipes;
-    
+
   } catch (error) {
-    window.console.error(error);
+    window.console.log(error);
   }
 }
 
 export function DisplayModal(innerHTML) {
-  let modal = document.querySelector("#modal");
-  modal.innerHTML = innerHTML;
-  OpenModal();
+  try {
+    let modal = document.querySelector("#modal");
+    modal.innerHTML = innerHTML;
+    OpenModal();
+  } catch (error) {
+    window.console.log(error);
+  }
+
 }
 
 
@@ -125,22 +144,23 @@ export let availableList = "productList"
 
 let hamCount = 0;
 
-const templateHeader = `<div class="logo">
+const templateHeader = `
+  <div class="logo">
   <img src="/images/alexander-mils-nG4ZimMIO_k-unsplash.WebP" alt="tent image for logo" loading="lazy" width="100" height="100"/>
   <a href="/index.html">Food<span class="highlight">Tracker</span></a>
-</div>
-  <button type="button" id="menu">&#9776</button>
-<div class="navigation">
-  <ul>
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/directories/grocery.html">My Groceries</a></li>
-    <li><a href="/directories/meal-planner.html">Meal planner</a></li>
-    <li><a href="/directories/recepies-listing.html">Recipes Listing</a></li>
-    <li><a href="/directories/search.html">Search Recepies</a></li>
-  </ul>
-  <div id="overlay" ></div>
-    <div id="modal" ></div>
   </div>
+  <button type="button" id="menu">&#9776</button>
+  <div class="navigation">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/directories/grocery.html">My Groceries</a></li>
+      <li><a href="/directories/meal-planner.html">Meal planner</a></li>
+      <li><a href="/directories/recepies-listing.html">Recipes Listing</a></li>
+      <li><a href="/directories/search.html">Search Recepies</a></li>
+    </ul>
+  </div>
+  <div id="overlay"></div>
+  <div id="modal"></div>
 `;
 
 const templateFooter = `&copy;NOT a real business`;

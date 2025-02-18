@@ -1,3 +1,6 @@
+import ProductData from "./ProductData.mjs";
+import ProductListing from "./ProductList.mjs";
+
 let searchbutton = document.querySelector("#find");
 let searchRes = document.querySelector("#result");
 
@@ -5,25 +8,20 @@ searchbutton.oninput = function () {
   GetResult();
 };
 
+let Info = new ProductData();
+let List = new ProductListing(Info, searchRes);
+
+
+
 async function GetResult() {
-  let data = await fetch("/json/recipes-temporary.json");
-  let res = await data.json();
-  res = res.filter((item) =>
-    item.Name.toLowerCase().includes(searchbutton.value.toLowerCase()),
+  let myList = await List.init(true)
+  let res = myList.filter((item) =>
+    item.title.toLowerCase().includes(searchbutton.value.toLowerCase()),
   );
 
-  let theList = res.map((item) => productCardTemplate(item));
-  searchRes.innerHTML = theList.join("");
+  List.renderList(res);
+  if (searchbutton.value == "") {
+    searchRes.innerHTML = ``;
+  };
 }
 
-function productCardTemplate(product) {
-  let card = "";
-  card = `<li class="product-card">
-        <a href="/directories/recipe-details.html?product=${product.Name}">
-          <h2 class="card__name">${product.Name}</h2>
-          <img src="${product.Image}" alt="${product.Name}" loading="lazy" height="200">
-        </a>
-      </li>`;
-
-  return card;
-}

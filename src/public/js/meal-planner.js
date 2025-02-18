@@ -136,10 +136,9 @@ function TemplateEvent() {
                 <div class="ModalContent">
                     <div class="ModalButtons">
                         <button type="button" class="addMeal">Add meal</button>
-                        <button type="button" class="removeMeal>Remove meal</button>
+                        <button type="button" class="removeMeal">Remove meal</button>
                     </div>
                     <div class="ModalDisplay">
-                        hie there
                         ${RenderProducts().innerHTML}
                     </div>
                 </div>`;
