@@ -141,7 +141,7 @@ export function DisplayModal(innerHTML) {
 // variables 
 // name control for conststancy
 export let availableList = "productList";
-export let eventsList = "productList";
+export let eventsList = "mealEvents";
 
 let hamCount = 0;
 

@@ -209,6 +209,7 @@ function EmpowerAdder(day) {
         "meals": day.meals
       }
       mealsStored.push(storageObject);
+      setLocalStorage(eventsList, mealsStored)
       // window.console.log(day.meals);
     })
   });
