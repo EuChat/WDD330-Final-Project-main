@@ -2,10 +2,10 @@
   --font-body: Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   /* colors */
-  --primary-color: #4CAF50;
-  --secondary-color: #FF9800;
+  --primary-color: #4caf50;
+  --secondary-color: #ff9800;
   --tertiary-color: #a4b8c4;
-  --light-grey: #F0F0F0;
+  --light-grey: #f0f0f0;
   --dark-grey: #333333;
 
   /* sizes */
@@ -97,7 +97,12 @@ header {
 
 .hero {
   background-color: var(--dark-grey);
-  background-image: linear-gradient(to bottom right, rgba(226, 190, 190, 0.5), rgba(200, 210, 230, 0.5)), url(/images/nordwood-themes-Tmz8FThN_BE-unsplash.WebP);
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(226, 190, 190, 0.5),
+      rgba(200, 210, 230, 0.5)
+    ),
+    url(/images/nordwood-themes-Tmz8FThN_BE-unsplash.WebP);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 10%;
@@ -367,8 +372,6 @@ footer {
   grid-template-columns: 1fr 5fr;
   align-self: stretch;
 }
-
-
 
 .ModalButtons {
   display: flex;

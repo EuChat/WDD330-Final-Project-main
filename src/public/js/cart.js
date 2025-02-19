@@ -37,7 +37,7 @@ closers.forEach((element) => {
     let theItem = theList.findIndex((item) => item.title == element.value);
     theList.splice(theItem, 1);
 
-    // reload the page 
+    // reload the page
     setLocalStorage("so-cart", theList);
     window.location.reload();
   });

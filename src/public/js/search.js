@@ -19,6 +19,5 @@ async function GetResult() {
   List.renderList(res);
   if (searchbutton.value == "") {
     searchRes.innerHTML = ``;
-  };
+  }
 }
-

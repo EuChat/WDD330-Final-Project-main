@@ -1,5 +1,11 @@
-import { DisplayModal, getLocalStorage, setLocalStorage, eventsList, setSessionStorage, getSessionStorage } from "./utils.mjs";
-
+import {
+  DisplayModal,
+  getLocalStorage,
+  setLocalStorage,
+  eventsList,
+  setSessionStorage,
+  getSessionStorage,
+} from "./utils.mjs";
 
 // Create the calendar dynamically
 function createCalendar() {
@@ -84,7 +90,7 @@ function createCalendar() {
 
       dayDiv.setAttribute("class", "day");
 
-      // data of the day 
+      // data of the day
       dayDiv.data = document.createElement("div");
       dayDiv.data.innerHTML = `What's happening on ${i}?`;
       dayDiv.meals = [];
@@ -157,14 +163,14 @@ function TemplateEvent() {
 
 function EmpowerButtons(day) {
   // window.console.log(day.meals);
-  // showing the meals 
+  // showing the meals
   let adder = document.querySelector(".addMeal");
   adder.addEventListener("click", () => {
     renderCartContents(".ModalDisplay");
     EmpowerAdder(day);
   });
 
-  // removing meal 
+  // removing meal
   let remover = document.querySelector(".removeMeal");
   remover.addEventListener("click", () => {
     let victim = document.querySelector(".ModalDisplay");
@@ -172,10 +178,12 @@ function EmpowerButtons(day) {
     victim.innerHTML = day.meals;
     day.classList.remove("set");
     let mealsStored = getLocalStorage(eventsList) || [];
-    let itemOfInterest = mealsStored.indexOf((meal) => { (day.number == meal.number) })
+    let itemOfInterest = mealsStored.indexOf((meal) => {
+      day.number == meal.number;
+    });
     mealsStored.splice(itemOfInterest, 1);
     setLocalStorage(eventsList, mealsStored);
-  })
+  });
 
   // showing current meal s
   let shower = document.querySelector(".display");
@@ -186,20 +194,17 @@ function EmpowerButtons(day) {
     // window.console.log(day.meals);
     day.meals.forEach((meal) => {
       myUl.innerHTML += cartItemTemplate(meal, false);
-    })
+    });
     victim.appendChild(myUl);
   });
-
 }
 
-
 function EmpowerAdder(day) {
-
   // actually adding the meal
   let scheduler = document.querySelectorAll(".selector");
   scheduler.forEach((button) => {
     button.addEventListener("click", () => {
-      day.classList.add("set")
+      day.classList.add("set");
       let cartItems = getLocalStorage("so-cart") || [];
       let result = cartItems.find((item) => item.id == button.value);
       // window.console.log(result);
@@ -207,15 +212,15 @@ function EmpowerAdder(day) {
       let mealsStored = getLocalStorage(eventsList) || [];
 
       let storageObject = {
-        "number": day.number,
-        "month": day.month,
-        "year": day.year,
-        "meals": day.meals
-      }
+        number: day.number,
+        month: day.month,
+        year: day.year,
+        meals: day.meals,
+      };
       mealsStored.push(storageObject);
-      setLocalStorage(eventsList, mealsStored)
+      setLocalStorage(eventsList, mealsStored);
       // window.console.log(day.meals);
-    })
+    });
   });
 }
 
@@ -233,8 +238,8 @@ function RestoreMeals() {
           }
         }
       }
-    })
-  })
+    });
+  });
 }
 
 // cart details added
