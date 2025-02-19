@@ -1,4 +1,4 @@
-import { GetRecipes, getLocalStorage, setLocalStorage, availableList } from "./utils.mjs";
+import { GetRecipes, getSessionStorage, setSessionStorage, availableList } from "./utils.mjs";
 
 // function convertToJson(res) {
 //   if (res.ok) {
@@ -13,8 +13,8 @@ export default class ProductData {
 
   }
   async getData() {
-    let theOutput = getLocalStorage(availableList) || await GetRecipes();
-    setLocalStorage(availableList, theOutput)
+    let theOutput = getSessionStorage(availableList) || await GetRecipes();
+    setSessionStorage(availableList, theOutput);
     return theOutput;
   }
 

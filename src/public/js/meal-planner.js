@@ -1,4 +1,4 @@
-import { DisplayModal, getLocalStorage, setLocalStorage, eventsList } from "./utils.mjs";
+import { DisplayModal, getLocalStorage, setLocalStorage, eventsList, setSessionStorage, getSessionStorage } from "./utils.mjs";
 
 
 // Create the calendar dynamically
@@ -121,6 +121,7 @@ function createCalendar() {
 
   // Render the initial calendar
   renderCalendar(currentDate);
+  window.console.log(getSessionStorage("working")) || window.console.log("failed"); setSessionStorage("working", true);
 }
 
 function DisplayMealDetails() {
@@ -218,9 +219,9 @@ function EmpowerAdder(day) {
 function RestoreMeals() {
   let myList = getLocalStorage(eventsList) || [];
   let days = document.querySelectorAll(".day");
-  myList.forEach((mealEvent) => {
-    days.forEach((day) => {
-      if (day.number == mealEvent.number && day.year == mealEvent.year && day.month == mealEvent.month) {
+  days.forEach((day) => {
+    myList.forEach((mealEvent) => {
+      if (day.number == mealEvent.number && day.year == mealEvent.year && day.month == mealEvent.month && day.meals != []) {
         day.classList.add("set")
       }
     })
