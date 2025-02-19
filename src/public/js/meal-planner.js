@@ -90,6 +90,7 @@ function createCalendar() {
       dayDiv.meals = [];
       dayDiv.month = month;
       dayDiv.year = year;
+      dayDiv.numbre = i;
 
       numberDay.textContent = i;
 
@@ -134,6 +135,7 @@ function DisplayMealDetails() {
 
 // Call the function to build the calendar
 createCalendar();
+RestoreMeals();
 DisplayMealDetails();
 
 function TemplateEvent() {
@@ -201,6 +203,7 @@ function EmpowerAdder(day) {
       let mealsStored = getLocalStorage(eventsList) || [];
 
       let storageObject = {
+        "number": day.number,
         "month": day.month,
         "year": day.year,
         "meals": day.meals
@@ -212,9 +215,14 @@ function EmpowerAdder(day) {
 }
 
 function RestoreMeals() {
-  let getLocalStorage(eventsList);
-  eventsList.forEach((mealEvent) => {
-
+  let myList = getLocalStorage(eventsList);
+  let days = document.querySelectorAll(".day");
+  myList.forEach((mealEvent) => {
+    days.forEach((day) => {
+      if (day.number == mealEvent.number && day.year == mealEvent.year && day.month == mealEvent.month) {
+        day.classList.add("set")
+      }
+    })
   })
 }
 
