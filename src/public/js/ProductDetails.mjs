@@ -36,7 +36,7 @@ function productDetailsTemplate(product) {
     ${nutrition.innerHTML}
 
     <h3 class="divider">Instructions</h3>
-    ${nutrition.innerHTML}
+    ${instructions.innerHTML}
 
     <div class="product-detail__add">
       <button id="addToCart" data-id="${product.id}">Add to Cart</button>
