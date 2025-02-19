@@ -18,6 +18,14 @@ function productDetailsTemplate(product) {
     nutrition.appendChild(item);
   })
 
+  //instructions
+  let instructions = document.createElement("ol");
+  product.analyzedInstructions.forEach(instrcution => {
+    let item = document.createElement("li");
+    item.textContent = instrcution;
+    instructions.appendChild(item);
+  })
+
 
   output = `<section class="product-detail"> <h2>${product.title}</h2>
     <img src="${product.image}" alt="${product.title}" loading="lazy" >
@@ -25,6 +33,9 @@ function productDetailsTemplate(product) {
     ${ingredients.innerHTML}
 
     <h3 class="divider">Nutrition</h3>
+    ${nutrition.innerHTML}
+
+    <h3 class="divider">Instructions</h3>
     ${nutrition.innerHTML}
 
     <div class="product-detail__add">
@@ -39,7 +50,7 @@ function productDetailsTemplate(product) {
 export default class ProductDetails {
   constructor(productId, dataSource) {
     this.productId = productId;
-    this.product = {};
+    // this.product = {};
     this.dataSource = dataSource;
   }
 
@@ -61,7 +72,6 @@ export default class ProductDetails {
     }
   }
   addToCart() {
-    // setLocalStorage("so-cart", this.product); // broken code!
     // Retrieve the existing cart from local storage
     let currentCart = JSON.parse(localStorage.getItem("so-cart")) || [];
 

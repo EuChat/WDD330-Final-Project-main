@@ -171,6 +171,10 @@ function EmpowerButtons(day) {
     day.meals = [];
     victim.innerHTML = day.meals;
     day.classList.remove("set");
+    let mealsStored = getLocalStorage(eventsList) || [];
+    let itemOfInterest = mealsStored.indexOf((meal) => { (day.number == meal.number) })
+    mealsStored.splice(itemOfInterest, 1);
+    setLocalStorage(eventsList, mealsStored);
   })
 
   // showing current meal s
@@ -221,9 +225,11 @@ function RestoreMeals() {
   days.forEach((day) => {
     myList.forEach((mealEvent) => {
       if (day.number == mealEvent.number) {
-        if (day.year == mealEvent.year) if (day.month == mealEvent.month) {
-          if (day.meals != []) {
-            day.classList.add("set")
+        if (day.year == mealEvent.year) {
+          if (day.month == mealEvent.month) {
+            if (day.meals != []) {
+              day.classList.add("set");
+            }
           }
         }
       }
