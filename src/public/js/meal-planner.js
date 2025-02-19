@@ -146,7 +146,7 @@ RestoreMeals();
 
 function TemplateEvent() {
   let output = `<div class="ModalHead">
-                    <h3>Plan Meal<h3> 
+                    <h2>Plan Your Meal<h2> 
                     <button type="button" class="closer">&times</button>
                 </div>
                 <div class="ModalContent">
@@ -156,6 +156,7 @@ function TemplateEvent() {
                         <button type="button" class="display" >Display current Recipe</button>
                     </div>
                     <div class="ModalDisplay">
+                    <span id="fillerText">Remember! you need to add items to your groceries list to make them visible in the list</span>
                     </div>
                 </div>`;
   return output;

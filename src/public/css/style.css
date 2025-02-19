@@ -323,6 +323,11 @@ footer {
   color: white;
 }
 
+#fillerText {
+  color: lightgray;
+  align-content: center;
+}
+
 /* calendar end  */
 
 /* modal css start  */

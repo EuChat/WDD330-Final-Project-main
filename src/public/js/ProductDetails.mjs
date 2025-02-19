@@ -41,7 +41,7 @@ function productDetailsTemplate(product) {
       ${instructions.innerHTML}
     </ol>
     <div class="product-detail__add">
-      <button id="addToCart" data-id="${product.id}">Add to Cart</button>
+      <button id="addToCart" data-id="${product.id}">Add to Groceries</button>
     </div></section>`;
 
 
@@ -62,7 +62,7 @@ export default class ProductDetails {
     // once we have the product details we can render out the HTML
     // this.renderProductDetails("main");
     this.renderProductDetails("main");
-    // once the HTML is rendered we can add a listener to Add to Cart button
+    // once the HTML is rendered we can add a listener to Add to Groceres button
     // Notice the .bind(this). Our callback will not work if we don't include that line. Review the readings from this week on 'this' to understand why.
     try {
       document
