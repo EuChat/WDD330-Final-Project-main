@@ -20,24 +20,26 @@ function productDetailsTemplate(product) {
 
   //instructions
   let instructions = document.createElement("ol");
-  product.analyzedInstructions.forEach(instrcution => {
+  product.analyzedInstructions[0].steps.forEach(instrcution => {
     let item = document.createElement("li");
-    item.textContent = instrcution;
+    item.textContent = instrcution.step;
     instructions.appendChild(item);
   })
-
 
   output = `<section class="product-detail"> <h2>${product.title}</h2>
     <img src="${product.image}" alt="${product.title}" loading="lazy" >
     <h3 class="divider">Ingredients</h3>
-    ${ingredients.innerHTML}
-
+    <ul>
+      ${ingredients.innerHTML}
+    </ul>
     <h3 class="divider">Nutrition</h3>
-    ${nutrition.innerHTML}
-
+    <ul>
+      ${nutrition.innerHTML}
+    </ul>
     <h3 class="divider">Instructions</h3>
-    ${instructions.innerHTML}
-
+    <ol>
+      ${instructions.innerHTML}
+    </ol>
     <div class="product-detail__add">
       <button id="addToCart" data-id="${product.id}">Add to Cart</button>
     </div></section>`;
