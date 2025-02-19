@@ -121,7 +121,6 @@ function createCalendar() {
 
   // Render the initial calendar
   renderCalendar(currentDate);
-  window.console.log(getSessionStorage("working")) || window.console.log("failed"); setSessionStorage("working", true);
 }
 
 function DisplayMealDetails() {

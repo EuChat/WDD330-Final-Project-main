@@ -114,7 +114,6 @@ export function OpenModal() {
 }
 
 export async function GetRecipes() {
-  // const url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=vegetarian%2Cdessert&number=8";
   const url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=20";
   const options = {
     method: "GET",
