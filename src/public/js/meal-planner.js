@@ -90,7 +90,7 @@ function createCalendar() {
       dayDiv.meals = [];
       dayDiv.month = month;
       dayDiv.year = year;
-      dayDiv.numbre = i;
+      dayDiv.number = i;
 
       numberDay.textContent = i;
 
@@ -136,8 +136,8 @@ function DisplayMealDetails() {
 
 // Call the function to build the calendar
 createCalendar();
-RestoreMeals();
 DisplayMealDetails();
+RestoreMeals();
 
 function TemplateEvent() {
   let output = `<div class="ModalHead">
@@ -221,8 +221,12 @@ function RestoreMeals() {
   let days = document.querySelectorAll(".day");
   days.forEach((day) => {
     myList.forEach((mealEvent) => {
-      if (day.number == mealEvent.number && day.year == mealEvent.year && day.month == mealEvent.month && day.meals != []) {
-        day.classList.add("set")
+      if (day.number == mealEvent.number) {
+        if (day.year == mealEvent.year) if (day.month == mealEvent.month) {
+          if (day.meals != []) {
+            day.classList.add("set")
+          }
+        }
       }
     })
   })

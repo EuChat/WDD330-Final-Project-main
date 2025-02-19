@@ -68,6 +68,12 @@ header {
   transition: display 1s;
 }
 
+.navigation ul li:hover {
+  border-radius: 5px;
+  border: var(--border);
+  transition: border 100ms;
+}
+
 .logo {
   line-height: 60px;
   width: 245px;
@@ -91,10 +97,11 @@ header {
 
 .hero {
   background-color: var(--dark-grey);
-  background-image: url(/images/nordwood-themes-Tmz8FThN_BE-unsplash.WebP);
+  background-image: linear-gradient(to bottom right, rgba(226, 190, 190, 0.5), rgba(200, 210, 230, 0.5)), url(/images/nordwood-themes-Tmz8FThN_BE-unsplash.WebP);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 10%;
+  font-weight: 500;
 }
 
 /* utility classes */
