@@ -97,11 +97,9 @@ header {
 
 .hero {
   background-color: var(--dark-grey);
-  background-image: linear-gradient(
-      to bottom right,
+  background-image: linear-gradient(to bottom right,
       rgba(226, 190, 190, 0.5),
-      rgba(200, 210, 230, 0.5)
-    ),
+      rgba(200, 210, 230, 0.5)),
     url(/images/nordwood-themes-Tmz8FThN_BE-unsplash.WebP);
   background-size: cover;
   background-repeat: no-repeat;
@@ -301,7 +299,7 @@ footer {
 }
 
 .days div.set {
-  border: 0.3rem solid #4caf50;
+  border: 0.3rem solid var(--primary-color);
 }
 
 .days div p {
@@ -326,6 +324,11 @@ footer {
 #fillerText {
   color: lightgray;
   align-content: center;
+}
+
+
+.days div.set.today {
+  border: 0.3rem solid var(--secondary-color);
 }
 
 /* calendar end  */
