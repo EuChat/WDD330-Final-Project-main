@@ -217,7 +217,7 @@ function EmpowerAdder(day) {
 
 function RestoreMeals() {
   let myList = getLocalStorage(eventsList);
-  let days = document.querySelectorAll(".day");
+  let days = document.querySelectorAll(".day") || [];
   myList.forEach((mealEvent) => {
     days.forEach((day) => {
       if (day.number == mealEvent.number && day.year == mealEvent.year && day.month == mealEvent.month) {
