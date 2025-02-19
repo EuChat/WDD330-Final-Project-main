@@ -38,4 +38,9 @@
     gap: 5%;
     transition: display 1s;
   }
+
+  .ModalButtons button {
+    width: 90%;
+    padding: 0.1rem;
+  }
 }

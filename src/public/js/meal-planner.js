@@ -1,4 +1,4 @@
-import { DisplayModal, getLocalStorage } from "./utils.mjs";
+import { DisplayModal, getLocalStorage, setLocalStorage, eventsList } from "./utils.mjs";
 
 
 // Create the calendar dynamically
@@ -88,6 +88,8 @@ function createCalendar() {
       dayDiv.data = document.createElement("div");
       dayDiv.data.innerHTML = `What's happening on ${i}?`;
       dayDiv.meals = [];
+      dayDiv.month = month;
+      dayDiv.year = year;
 
       numberDay.textContent = i;
 
@@ -196,11 +198,25 @@ function EmpowerAdder(day) {
       let result = cartItems.find((item) => item.id == button.value);
       // window.console.log(result);
       day.meals.push(result);
+      let mealsStored = getLocalStorage(eventsList) || [];
+
+      let storageObject = {
+        "month": day.month,
+        "year": day.year,
+        "meals": day.meals
+      }
+      mealsStored.push(storageObject);
       // window.console.log(day.meals);
     })
   });
 }
 
+function RestoreMeals() {
+  let getLocalStorage(eventsList);
+  eventsList.forEach((mealEvent) => {
+
+  })
+}
 
 // cart details added
 function renderCartContents(theLocation = ".product-list") {
